@@ -46,8 +46,8 @@ type PMAPI interface {
 }
 
 type PMNSNode struct {
-	name string
-	leaf int
+	Name string
+	Leaf int
 }
 
 type pmapiContext struct {
@@ -300,7 +300,7 @@ func (c *pmapiContext) PmGetChildrenStatus(name string) ([]PMNSNode, error) {
 	/* Convert from C strings into golang  */
 	children := make([]PMNSNode, number_of_children)
 	for i := 0; i < number_of_children; i++ {
-		children[i] = PMNSNode{name: C.GoString(children_ptr_slice[i]), leaf: int(children_status_ptr_slice[i])}
+		children[i] = PMNSNode{Name: C.GoString(children_ptr_slice[i]), Leaf: int(children_status_ptr_slice[i])}
 	}
 
 	return children, nil

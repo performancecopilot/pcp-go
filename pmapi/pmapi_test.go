@@ -270,14 +270,14 @@ func TestPmapiContext_PmGetChildrenStatus_returnsChildrenFromNonLeafNode(t *test
 	children, _ := localContext().PmGetChildrenStatus("sample.ulong")
 
 	assert.Equal(t, []PMNSNode{
-		{name: "one", 		leaf:PmLeafStatus},
-		{name: "ten", 		leaf:PmLeafStatus},
-		{name: "hundred", 	leaf:PmLeafStatus},
-		{name: "million", 	leaf:PmLeafStatus},
-		{name: "write_me", 	leaf:PmLeafStatus},
-		{name: "bin", 		leaf:PmLeafStatus},
-		{name: "bin_ctr", 	leaf:PmLeafStatus},
-		{name: "count", 	leaf:PmNonLeafStatus},
+		{Name: "one", 		Leaf:PmLeafStatus},
+		{Name: "ten", 		Leaf:PmLeafStatus},
+		{Name: "hundred", 	Leaf:PmLeafStatus},
+		{Name: "million", 	Leaf:PmLeafStatus},
+		{Name: "write_me", 	Leaf:PmLeafStatus},
+		{Name: "bin", 		Leaf:PmLeafStatus},
+		{Name: "bin_ctr", 	Leaf:PmLeafStatus},
+		{Name: "count", 	Leaf:PmNonLeafStatus},
 	}, children)
 }
 
